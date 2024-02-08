@@ -1,0 +1,146 @@
+.footer {
+  @include flex-center;
+  margin-top: 25px;
+  min-height: 660px;
+  @include bg;
+
+  @media (max-width: 1400px) {
+    min-height: 540px;
+  }
+
+  @include r($desktop) {
+    min-height: 470px;
+  }
+
+  @include r($tablet) {
+    min-height: 370px;
+    padding: 40px 0;
+  }
+  @media (max-width: 500px) {
+    margin-top: -30px;
+  }
+
+  &__list {
+    @include flex-center;
+    gap: 90px;
+
+    @media (max-width: 1400px) {
+      gap: 50px 75px;
+      flex-wrap: wrap;
+    }
+
+    @include r($lg) {
+      gap: 40px;
+    }
+
+    @include r($tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    min-height: 150px;
+    @include flex-center;
+    background-color: rgba(#393939, .6);
+    border-radius: 75px;
+    color: $white;
+    transition: background-color .3s, opacity .3s;
+    @include r($desktop) {
+      min-height: 130px;
+    }
+    @include r($tablet) {
+      min-height: 115px;
+      max-width: 350px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    @include r($sm) {
+      min-height: 110px;
+    }
+
+    &:hover {
+      background-color: rgba(#393939, .8);
+    }
+  }
+
+  &__item-link {
+    @include flex-center;
+    gap: 20px;
+    font-size: 28px;
+    line-height: 1;
+    font-family: $bungee;
+    padding-right: 65px;
+    transition: opacity .3s;
+    @media (max-width: 1400px) {
+      font-size: 26px;
+      padding-right: 45px;
+    }
+    @include r($desktop) {
+      font-size: 24px;
+    }
+    @include r($tablet) {
+      font-size: 22px;
+    }
+    @include r($sm) {
+      font-size: 20px;
+    }
+
+    &:focus {
+      opacity: .5;
+    }
+  }
+
+  &__item-logo {
+    @include flex-center;
+    background-color: #393939;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    @include r($desktop) {
+      width: 130px;
+      height: 130px;
+    }
+    @include r($tablet) {
+      width: 115px;
+      height: 115px;
+    }
+    @include r($sm) {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  &__item-img {
+    @include bg;
+    transition: transform .4s;
+
+    &--twitter {
+      @include r($tablet) {
+        height: 40px;
+        width: 45px;
+      }
+      @include r($sm) {
+        height: 37px;
+        width: 42px;
+      }
+    }
+
+    &--discord {
+      @include r($tablet) {
+        height: 43px;
+        width: 56px;
+      }
+      @include r($sm) {
+        height: 38px;
+        width: 52px;
+      }
+    }
+
+    &--sea {
+      @include r($sm) {
+        width: 53px;
+        height: 53px;
+      }
+    }
+  }
+}

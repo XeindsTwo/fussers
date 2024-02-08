@@ -1,0 +1,260 @@
+.again {
+  @include bg;
+  position: relative;
+  min-height: 1200px;
+  margin-top: 20px;
+  padding-top: 80px;
+  padding-bottom: 310px;
+  @media (max-width: 1500px) {
+    min-height: 900px;
+  }
+  @media (max-width: 1400px) {
+    margin-bottom: 230px;
+  }
+  @media (max-width: 1100px) {
+    padding-bottom: 200px;
+  }
+  @include r($lg) {
+    min-height: 800px;
+    overflow: hidden;
+  }
+  @media (max-width: 930px) {
+    min-height: 730px;
+    margin-top: 90px;
+  }
+  @include r($tablet) {
+    background-position: left;
+    min-height: 670px;
+    margin-top: 50px;
+    padding-top: 45px;
+    padding-bottom: 150px;
+    margin-bottom: 130px;
+  }
+  @include r($sm) {
+    min-height: 760px;
+    margin-top: 25px;
+    padding-bottom: 0;
+  }
+  @include r($phone) {
+    min-height: 600px;
+  }
+
+  &__content {
+    max-width: 460px;
+    margin-left: 13%;
+    position: relative;
+    z-index: 100;
+    padding: 310px 0 210px;
+    color: $white;
+    @media (max-width: 1500px) {
+      margin-left: 19%;
+    }
+    @media (max-width: 1410px) {
+      margin-left: auto;
+      text-align: right;
+    }
+    @include r($desktop) {
+      padding-top: 200px;
+    }
+    @media (max-width: 700px) {
+      padding: 160px 0;
+    }
+    @include r($phone) {
+      padding: 130px 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    color: $white;
+  }
+
+  &__text {
+    font-size: 20px;
+    @include r($tablet) {
+      font-size: 18px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+  }
+
+  &__sky {
+    @include bg;
+    position: absolute;
+    bottom: -130px;
+    z-index: 20;
+    @media (max-width: 800px) {
+      bottom: -100px;
+    }
+    @include r($tablet) {
+      bottom: -85px;
+    }
+    @include r($sm) {
+      bottom: -55px;
+    }
+  }
+
+  &-left,
+  &-right {
+    position: absolute;
+    bottom: 0;
+
+    img {
+      @include objectCoverBg;
+    }
+  }
+
+  &-left {
+    display: flex;
+    @media (max-width: 1670px) {
+      left: -100px;
+    }
+    @media (max-width: 1600px) {
+      left: -150px;
+    }
+    @media (max-width: 1450px) {
+      bottom: -20px;
+    }
+    @media (max-width: 1400px) {
+      bottom: -40px;
+    }
+    @include r($desktop) {
+      bottom: -75px;
+    }
+    @media (max-width: 1100px) {
+      left: -75px;
+      bottom: -130px;
+    }
+    @include r($lg) {
+      left: -120px;
+    }
+    @media (max-width: 700px) {
+      left: -175px;
+    }
+
+    img {
+      &:nth-child(1) {
+        position: relative;
+        left: -50%;
+        animation: translateQuestionRight 6s infinite;
+        @media (max-width: 1100px) {
+          position: relative;
+          bottom: -50px;
+        }
+        @include r($lg) {
+          bottom: -20px;
+        }
+        @media (max-width: 700px) {
+          left: -30%;
+        }
+        @include r($sm) {
+          bottom: 0;
+          opacity: .7;
+          transform: translateY(-8%);
+        }
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        bottom: -1%;
+        @media (max-width: 1600px) {
+          bottom: -5%;
+        }
+        @include r($tablet) {
+          left: 30px;
+          bottom: -11%;
+        }
+        @media (max-width: 700px) {
+          display: none;
+        }
+      }
+
+      &:nth-child(3) {
+        position: absolute;
+        bottom: 4%;
+        left: 16%;
+        @media (max-width: 1600px) {
+          bottom: 0;
+        }
+        @include r($tablet) {
+          display: none;
+        }
+      }
+
+      &:nth-child(4) {
+        position: absolute;
+        bottom: 15%;
+        width: 40%;
+        left: auto;
+        right: -65px;
+        display: none;
+        @media (max-width: 700px) {
+          display: block;
+        }
+        @include r($phone) {
+          right: -35px;
+          bottom: 20%;
+        }
+      }
+    }
+  }
+
+  &-right {
+    right: 0;
+    display: flex;
+    @media (max-width: 1670px) {
+      right: -100px;
+    }
+    @media (max-width: 1600px) {
+      right: -150px;
+    }
+    @media (max-width: 1410px) {
+      display: none;
+    }
+
+    img {
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        position: absolute;
+      }
+
+      &:nth-child(1) {
+        animation: translateQuestionRight 6s infinite;
+        position: relative;
+        top: 200px;
+        z-index: 30;
+        left: 34%;
+      }
+
+      &:nth-child(2) {
+        animation: translate360 15s infinite;
+        left: 155px;
+        bottom: 25px;
+        z-index: 2;
+        @media (max-width: 1600px) {
+          display: none;
+        }
+      }
+
+      &:nth-child(3) {
+        bottom: 250px;
+        right: 70px;
+        z-index: 10;
+        @media (max-width: 1680px) {
+          bottom: 200px;
+        }
+        @media (max-width: 1500px) {
+          bottom: 180px;
+        }
+      }
+
+      &:nth-child(4) {
+        bottom: 202px;
+        right: 0;
+        z-index: 0;
+      }
+    }
+  }
+}

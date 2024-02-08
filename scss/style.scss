@@ -1,0 +1,20 @@
+@import 'reset';
+@import 'fonts';
+@import 'vars';
+@import 'mixin';
+@import 'libs';
+@import 'global';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
+
+//Home
+@import 'home/dream';
+@import 'home/holder';
+@import 'home/benefits';
+@import 'home/advantages';
+@import 'home/about';
+/*@import 'home/crossmap';*/
+@import 'home/again';
+@import 'home/info';

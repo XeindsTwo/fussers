@@ -1,0 +1,112 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  font-family: $mcLaren;
+  font-weight: $fw-400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: $blue700;
+  background-color: $white;
+  position: relative;
+  overflow-x: hidden;
+
+  @include r($tablet) {
+    font-size: 16px;
+  }
+
+  @include r($phone) {
+    font-size: 14px;
+  }
+
+  &--active {
+    overflow: hidden;
+  }
+}
+
+.container {
+  max-width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.indent {
+  margin-top: 100px;
+}
+
+.title {
+  font-family: $bungee;
+  font-size: 32px;
+  font-weight: $fw-400;
+  line-height: 1.4;
+  color: $blue800;
+  text-transform: uppercase;
+
+  @include r($lg) {
+    font-size: 28px;
+  }
+
+  @include r($tablet) {
+    font-size: 26px;
+  }
+
+  @include r($sm) {
+    font-size: 24px;
+  }
+
+  @include r($phone) {
+    font-size: 22px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba($lime200, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $lime200;
+}
+
+@keyframes translateQuestionLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes translateQuestionRight {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-40deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes translate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

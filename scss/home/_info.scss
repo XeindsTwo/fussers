@@ -1,0 +1,164 @@
+.info {
+  margin-top: -230px;
+  position: relative;
+  z-index: 200;
+  @include bg;
+  @media(max-width: 1100px) {
+    background-position: inherit;
+  }
+
+  &__inner {
+    @include flex-center;
+    justify-content: space-between;
+    padding: 185px 0 130px;
+    gap: 90px;
+    @include r($desktop) {
+      gap: 65px;
+    }
+    @media(max-width: 1100px) {
+      flex-direction: column;
+      gap: 120px;
+      padding: 100px 0 40px;
+    }
+    @include r($tablet) {
+      gap: 80px;
+      padding-top: 160px;
+    }
+    @include r($sm) {
+      gap: 30px;
+      padding-top: 140px;
+    }
+  }
+
+  &__content {
+    max-width: 580px;
+    width: 100%;
+    @media(max-width: 1100px) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    @media(max-width: 1100px) {
+      margin: 0 auto 15px;
+    }
+  }
+
+  &__text {
+    letter-spacing: 0.27px;
+  }
+
+  &__cards {
+    display: flex;
+    @include r($tablet) {
+      position: relative;
+    }
+    @include r($phone) {
+      margin-top: -60px;
+    }
+    @media (max-width: 400px) {
+      margin-top: -40px;
+    }
+  }
+
+  &__item {
+    box-shadow: 0 2px 8px 0 rgba(9, 9, 10, 0.12);
+    background-color: $white;
+    border-radius: 16px;
+    width: 360px;
+    color: $black800;
+    @media (max-width: 1300px) {
+      width: 330px;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+
+    &:first-child {
+      @include r($tablet) {
+        transform: rotate(-20.6deg) scale(0.9);
+        left: 50px;
+        position: relative;
+        z-index: 2000;
+      }
+      @include r($sm) {
+        transform: rotate(-20.6deg) scale(0.7);
+      }
+      @include r($phone) {
+        transform: rotate(-20.6deg) scale(0.5);
+        left: 80px;
+      }
+      @media (max-width: 400px) {
+        position: static;
+        transform: scale(0.8);
+      }
+    }
+
+    &:last-child {
+      position: relative;
+      z-index: 1000;
+      transform: rotate(20.6deg);
+      left: -50px;
+      top: -30px;
+
+      @include r($tablet) {
+        left: auto;
+        right: 95px;
+        transform: rotate(20.6deg) scale(0.8);
+        position: absolute;
+      }
+      @include r($sm) {
+        transform: rotate(20.6deg) scale(0.6);
+      }
+      @include r($phone) {
+        transform: rotate(20.6deg) scale(0.5);
+        right: 80px;
+      }
+      @media (max-width: 400px) {
+        display: none;
+      }
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      gap: 10px;
+    }
+
+    &-text {
+      line-height: 1;
+      flex-grow: 1;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 16px 16px 0 0;
+    height: 340px;
+    width: 100%;
+    @include r($desktop) {
+      height: 330px;
+    }
+    @include r($lg) {
+      height: 300px;
+    }
+  }
+
+  &__avatar {
+    @include objectCoverBg;
+    border-radius: 50%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    gap: 20px;
+  }
+
+  &__time {
+    color: $blue700;
+  }
+}
